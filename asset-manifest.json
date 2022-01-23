@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/willflix_frontend/static/css/main.bb93be19.css",
-    "main.js": "/willflix_frontend/static/js/main.5999d9cc.js",
+    "main.js": "/willflix_frontend/static/js/main.8317db2f.js",
     "static/js/787.db9b214f.chunk.js": "/willflix_frontend/static/js/787.db9b214f.chunk.js",
     "index.html": "/willflix_frontend/index.html",
     "main.bb93be19.css.map": "/willflix_frontend/static/css/main.bb93be19.css.map",
-    "main.5999d9cc.js.map": "/willflix_frontend/static/js/main.5999d9cc.js.map",
+    "main.8317db2f.js.map": "/willflix_frontend/static/js/main.8317db2f.js.map",
     "787.db9b214f.chunk.js.map": "/willflix_frontend/static/js/787.db9b214f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bb93be19.css",
-    "static/js/main.5999d9cc.js"
+    "static/js/main.8317db2f.js"
   ]
 }
