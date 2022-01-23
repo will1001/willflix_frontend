@@ -3,13 +3,13 @@ import Home from "./pages/home/Home";
 import Register from "./pages/register/Register";
 import Watch from "./pages/watch/Watch";
 import Login from "./pages/login/Login";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const App = () => {
   const { user } = useSelector((state) => state.auths);
   return (
-    <BrowserRouter basename="/">
+    <HashRouter basename="/">
       <Routes>
         <Route
           exact
@@ -34,7 +34,7 @@ const App = () => {
           </>
         )}
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

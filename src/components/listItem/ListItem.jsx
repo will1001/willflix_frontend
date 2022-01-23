@@ -6,7 +6,7 @@ import {
   ThumbDownOutlined,
 } from "@mui/icons-material";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { userRequest } from "../../requestMethods";
 import { Link } from "react-router-dom";
 
 export default function ListItem({ index, movieId }) {
@@ -16,13 +16,7 @@ export default function ListItem({ index, movieId }) {
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const res = await axios.get("movies/find/" + movieId, {
-          headers: {
-            token:
-              "Bearer " +
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTJiNTE1Y2JkOTU1MmU1ODllZjA3NyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MjMxNzM0NSwiZXhwIjoxNjQyNzQ5MzQ1fQ.CIt09ZYYuzrlBiF9YjE8WxvGNBpEonH-lpjoOs3I5A0",
-          },
-        });
+        const res = await userRequest.get("movies/find/" + movieId);
         setMovie(res.data);
       } catch (err) {
         console.log(err);

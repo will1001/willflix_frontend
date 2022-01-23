@@ -3,8 +3,7 @@ import Featured from "../../components/featured/Featured";
 import "./home.scss";
 import List from "../../components/list/List";
 import { useState, useEffect } from "react";
-import axios from "axios";
-
+import { userRequest } from "../../requestMethods";
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState(null);
@@ -12,19 +11,9 @@ const Home = ({ type }) => {
   useEffect(() => {
     const getRandomLists = async () => {
       try {
-        const res = await axios.get(
-          `lists${type ? "?type=" + type : ""}${
-            genre ? "&genre=" + genre : ""
-          }`,
-          {
-            headers: {
-              token:
-                "Bearer " +
-                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZTJiNTE1Y2JkOTU1MmU1ODllZjA3NyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0MjMxNzM0NSwiZXhwIjoxNjQyNzQ5MzQ1fQ.CIt09ZYYuzrlBiF9YjE8WxvGNBpEonH-lpjoOs3I5A0",
-            },
-          }
+        const res = await userRequest.get(
+          `lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre : ""}`
         );
-
         setLists(res.data);
       } catch (err) {
         console.log(err);
